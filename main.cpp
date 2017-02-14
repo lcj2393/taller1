@@ -110,6 +110,36 @@ int imp,par,sp;
 
 			break;
 			case 2:
+			    int d2;
+                system("cls");margen();
+                gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
+                gotoxy(30,3);cout<<"MENU CICLO FOR"<<endl;
+                gotoxy(25,6);cout<<"Elija una opcion:"<<endl;
+                gotoxy(10,8);cout<<"1. Imprimir en Pantalla los numeros del 1 al 100."<<endl;
+                gotoxy(10,9);cout<<"2. Imprimir las tablas de multiplicar de un numero del 1 al 20."<<endl;
+                gotoxy(10,10);cout<<"3. Solucionar el Factorial de un numero."<<endl;
+                gotoxy(10,11);cout<<"4. Solucionar el numero de Fibonacci."<<endl;
+                gotoxy(10,12);cout<<"5. Pedir al usuario 5 numeros aleatorios y alamcenarlos y "<<endl;
+                gotoxy(12,13);cout<<" mostrarlos en un array."<<endl;
+                gotoxy(10,14);cout<<"0. atras."<<endl;gotoxy(43,6);cin>>d2;
+                system("cls");
+
+			    switch (d2)
+			    {
+                case 1:
+                    for (v=0;v<100;v++)
+                    {   cout<<v+1<<" "; }
+                    break;
+                case 2:
+
+                    break;
+
+
+			    }
+
+
+
+
 
 				break;
 			case 3:
