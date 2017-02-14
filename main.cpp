@@ -35,9 +35,7 @@ void margen ()//Funcion para margen de la ventana
 int main()
 {
 int dato;
-int v;
-int s;
-int m,n;
+int v,s,l,m,n,c;
 int imp,par,sp,fac;
 
 
@@ -152,12 +150,20 @@ int imp,par,sp,fac;
                         gotoxy(10,7);cout << "El factorial de "<<n<<" es: " <<fac<<"."<<endl;
 
                     break;
+                case 4:
+                        s=1,m=1,c=0,l=8;
+                        system("cls");margen();gotoxy(10,2);cout<<"Calculo de Serie Fibonacci"<<endl;
+                        gotoxy(10,4);cout<<"Digite numero de la cadena: ";gotoxy(38,4);cin>>n;
+                        gotoxy(10,6);cout<<s<<endl;gotoxy(10,7);cout<<m<<endl;
+                        for(v=0;v<(n-2);v++)
+                        {
+                            c=s+m;gotoxy(10,l);cout<<c<<endl;s=m; m=c;l++;
+                        }
+                    break;
                 default:
 				margen();
 				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3, 4 o 5"<<endl;
 			    }
-
-
 
 
 
