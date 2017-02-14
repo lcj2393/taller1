@@ -35,6 +35,10 @@ void margen ()//Funcion para margen de la ventana
 int main()
 {
 int dato;
+int v;
+int s;
+int imp,par,sp;
+
 
 	do
 	{	system("cls");margen();
@@ -70,37 +74,37 @@ int dato;
 			    switch (d1)
 			    {
                 case 1:
-                    int valor=0;
-                        while (valor < 100)
-                        {   valor++;cout<<valor<<" ";   }
+                        v=0;
+                        while (v < 100)
+                        {   v++;cout<<v<<" ";   }
                     break;
                 case 2:
-                    int v1=0,s=0;
-                        while ( v1 < 100)
-                        {   v1=v1+1;s=s+v1;  }
-                        cout<<"La suma es " <<s<<".";
+                        v=0,s=0;
+                        while ( v < 100)
+                        {   v++;s=s+v;  }
+                        system("cls");margen();gotoxy(25,10);cout<<"La suma es " <<s<<".";
                     break;
                 case 3:
-                    int par=1,sp=0;
+                        par=1,sp=0;
                         while(par<50)
                         {   if(par%2==0)
                             {	sp=sp+par;	}
                             par++;
                         }
-                        cout<<"La Suma de los Pares es "<<sp<<".";
+                        system("cls");margen();gotoxy(25,10);cout<<"La Suma de los Pares es "<<sp<<".";
                     break;
                 case 4:
-                    int imp=1,sp=0;
+                        imp=1,sp=0;
                         while(imp<50)
                         {   if(imp%2==0){}
                                 else{   sp=sp+imp;	}
                             imp++;
                         }
-                        cout<<"La Suma de los Impares es "<<sp<<".";
+                        system("cls");margen();gotoxy(25,10);cout<<"La Suma de los Impares es "<<sp<<".";
                     break;
                 default:
 				margen();
-				gotoxy(25,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3 o 4"<<endl;
+				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3 o 4"<<endl;
 			break;
 			    }
 
