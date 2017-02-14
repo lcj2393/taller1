@@ -55,27 +55,53 @@ int dato;
 				dato=0;
 			break;
 			case 1:
-			    string d1;
+			    int d1;
                 system("cls");margen();
                 gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
-                gotoxy(30,3);cout<<"MENU CICLO WHILE"<<endl;
-                gotoxy(28,6);cout<<"Elija una opcion:"<<endl;
-                gotoxy(28,8);cout<<"a. Imprimir en Pantalla los numeros del 1 al 100."<<endl;
-                gotoxy(28,9);cout<<"b. Sumar los numeros del 1 al 100."<<endl;
-                gotoxy(28,10);cout<<"3. Sumar los numeros pares del 1 al 50"<<endl;
-                gotoxy(28,11);cout<<"4. Sumar los numeros impares del 1 al 50."<<endl;
-                gotoxy(28,14);cout<<"0. atras."<<endl;gotoxy(46,6);cin>>d1;
+                gotoxy(28,3);cout<<"MENU CICLO WHILE"<<endl;
+                gotoxy(25,6);cout<<"Elija una opcion:"<<endl;
+                gotoxy(20,8);cout<<"1. Imprimir en Pantalla los numeros del 1 al 100."<<endl;
+                gotoxy(20,9);cout<<"2. Sumar los numeros del 1 al 100."<<endl;
+                gotoxy(20,10);cout<<"3. Sumar los numeros pares del 1 al 50"<<endl;
+                gotoxy(20,11);cout<<"4. Sumar los numeros impares del 1 al 50."<<endl;
+                gotoxy(20,12);cout<<"0. atras."<<endl;gotoxy(43,6);cin>>d1;
                 system("cls");
 
 			    switch (d1)
 			    {
-                case 'a':
-                        int v=0;
-                        while (v < 100)
-                        {
-                            v++;cout<<v<<" ";
-                        }
+                case 1:
+                    int valor=0;
+                        while (valor < 100)
+                        {   valor++;cout<<valor<<" ";   }
                     break;
+                case 2:
+                    int v1=0,s=0;
+                        while ( v1 < 100)
+                        {   v1=v1+1;s=s+v1;  }
+                        cout<<"La suma es " <<s<<".";
+                    break;
+                case 3:
+                    int par=1,sp=0;
+                        while(par<50)
+                        {   if(par%2==0)
+                            {	sp=sp+par;	}
+                            par++;
+                        }
+                        cout<<"La Suma de los Pares es "<<sp<<".";
+                    break;
+                case 4:
+                    int imp=1,sp=0;
+                        while(imp<50)
+                        {   if(imp%2==0){}
+                                else{   sp=sp+imp;	}
+                            imp++;
+                        }
+                        cout<<"La Suma de los Impares es "<<sp<<".";
+                    break;
+                default:
+				margen();
+				gotoxy(25,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3 o 4"<<endl;
+			break;
 			    }
 
 			break;
