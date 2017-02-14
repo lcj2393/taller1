@@ -38,7 +38,7 @@ int dato;
 int v;
 int s;
 int m,n;
-int imp,par,sp;
+int imp,par,sp,fac;
 
 
 	do
@@ -142,6 +142,14 @@ int imp,par,sp;
                             m=(n*(v+1));
                             gotoxy(10,s);cout<<n<<"x"<<v+1<<"= "<<m;s++;
                         }
+                    break;
+                case 3:
+                        system("cls");margen();gotoxy(10,4);cout<<"Digite un numero para calcular su factorial."<<endl;
+                        gotoxy(10,5);cout<<"Numero: "<<endl;gotoxy(18,5);cin>>n;
+                        fac=1;
+                        for (v=1;v<=n;v++)
+                        {   fac=v*fac;  }
+                        gotoxy(10,7);cout << "El factorial de "<<n<<" es: " <<fac<<"."<<endl;
 
                     break;
                 default:
