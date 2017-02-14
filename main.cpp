@@ -37,6 +37,7 @@ int main()
 int dato;
 int v;
 int s;
+int m,n;
 int imp,par,sp;
 
 
@@ -131,10 +132,21 @@ int imp,par,sp;
                     {   cout<<v+1<<" "; }
                     break;
                 case 2:
+                        system("cls");margen();gotoxy(10,4);cout<<"Digite un numero para generar tabla de multiplicar del 1 a 20."<<endl;
+                        gotoxy(10,5);cout<<"Numero: "<<endl;gotoxy(18,5);cin>>n;
+
+                        system("cls");margen();gotoxy(10,2);cout<<"La Tabla de Multiplicar de "<<n<<" es: "<<endl;
+                        s=3;
+                        for(v=0;v<20;v++)
+                        {
+                            m=(n*(v+1));
+                            gotoxy(10,s);cout<<n<<"x"<<v+1<<"= "<<m;s++;
+                        }
 
                     break;
-
-
+                default:
+				margen();
+				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3, 4 o 5"<<endl;
 			    }
 
 
