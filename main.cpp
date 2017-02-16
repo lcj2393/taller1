@@ -38,6 +38,7 @@ int dato;
 int v,s,l,m,n,c;
 int imp,par,sp,fac;
 int v1[5];
+float dec[4];
 
 
 	do
@@ -74,9 +75,11 @@ int v1[5];
 			    switch (d1)
 			    {
                 case 1:
+                        m=5;
+                        system("cls");margen();gotoxy(10,3);cout<<"Los numeros del 1 al 10 son: "<<endl;
                         v=0;
-                        while (v < 100)
-                        {   v++;cout<<v<<" ";   }
+                        while (v<10)
+                        {   v++;gotoxy(10,m);cout<<v<<" ";m++;   }
                     break;
                 case 2:
                         v=0,s=0;
@@ -127,8 +130,10 @@ int v1[5];
 			    switch (d2)
 			    {
                 case 1:
+                    m=10,n=5;
+                    system("cls");margen();gotoxy(10,3);cout<<"Los numeros del 1 al 100 son: "<<endl;
                     for (v=0;v<100;v++)
-                    {   cout<<v+1<<" "; }
+                    {   gotoxy(m,n);cout<<v+1<<" ";if((v==30) or (v==60) or (v==90)){ n++;}else{m=m+2;} }
                     break;
                 case 2:
                         system("cls");margen();gotoxy(10,4);cout<<"Digite un numero para generar tabla de multiplicar del 1 a 20."<<endl;
@@ -174,13 +179,36 @@ int v1[5];
 				margen();
 				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3, 4 o 5"<<endl;
 			    }
-
-
-
 				break;
 			case 3:
+                    int d3;
+                    system("cls");margen();
+                    gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
+                    gotoxy(33,3);cout<<"MENU ARRAY"<<endl;
+                    gotoxy(25,6);cout<<"Elija una opcion:"<<endl;
+                    gotoxy(10,8);cout<<"1. Array de numeros decimales."<<endl;
+                    gotoxy(10,9);cout<<"2. Generar Array a partir de 2 valores ingresados."<<endl;
+                    gotoxy(10,10);cout<<"3. Array 4x4."<<endl;
+                    gotoxy(10,11);cout<<"0. atras."<<endl;gotoxy(43,6);cin>>d3;
+                    system("cls");
 
+			    switch (d3)
+			    {
+                case 1:
+                    l=5;
+                    system("cls");margen();gotoxy(10,3);cout<<"Ingrese los 4 valores Decimales."<<endl;
+                    for(v=0;v<4;v++)
+                    {   gotoxy(10,l);cout<<"Valor "<<v+1<<": ";cin>>dec[v];cout;l++;   }
+
+                    gotoxy(10,12);cout<<"Los valores Decimales ingresados fueron: "<<endl;
+                    l=13;
+                    for(v=0;v<4;v++)
+                    {   gotoxy(10,l);cout<<"Valor "<<v+1<<"= "<<dec[v]<<endl;l++;    }
 				break;
+                default:
+				margen();
+				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2 o 3"<<endl;
+			    }
 			case 4:
 
 				break;
