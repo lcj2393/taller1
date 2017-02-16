@@ -39,6 +39,7 @@ int v,s,l,m,n,c;
 int imp,par,sp,fac;
 int v1[5];
 float dec[4];
+int matriz[4][4];
 
 
 	do
@@ -204,7 +205,25 @@ float dec[4];
                     l=13;
                     for(v=0;v<4;v++)
                     {   gotoxy(10,l);cout<<"Valor "<<v+1<<"= "<<dec[v]<<endl;l++;    }
-				break;
+                    break;
+				/*case 2:
+				    int n1,n2;
+				    m=0;
+				    n=1;
+                    l=5;
+                    system("cls");margen();gotoxy(10,2);cout<<"Ingrese los 2 valores para generar los Array."<<endl;
+                    gotoxy(10,4);cout<<"Valores para Array 1: ";cin>>n1;
+                    gotoxy(10,5);cout<<"Valores para Array 2: ";cin>>n2;
+                    for(v=0;v<n1;v++)
+                    {   gotoxy(10,l);cout<<"Valor "<<v+1<<": ";cin>>dec[v];cout;l++;   }
+
+                    gotoxy(10,12);cout<<"Los valores Decimales ingresados fueron: "<<endl;
+                    l=13;
+                    for(v=0;v<4;v++)
+                    {   gotoxy(10,l);cout<<"Valor "<<v+1<<"= "<<dec[v]<<endl;l++;    }
+
+                    break;*/
+
                 default:
 				margen();
 				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2 o 3"<<endl;
@@ -213,8 +232,41 @@ float dec[4];
 
 				break;
 			case 5:
+                    int d5;
+                    system("cls");margen();
+                    gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
+                    gotoxy(30,3);cout<<"MENU MATRICES"<<endl;
+                    gotoxy(25,6);cout<<"Elija una opcion:"<<endl;
+                    gotoxy(10,8);cout<<"1. Llenar Matri Automaticamente."<<endl;
+                    gotoxy(10,9);cout<<"2. Mostrar Matriz generada."<<endl;
+                    gotoxy(10,10);cout<<"0. atras."<<endl;gotoxy(43,6);cin>>d5;
+                    system("cls");
 
-				break;
+			    switch (d5)
+			    {
+                case 1:
+                    for(m=0;m<4;m++)
+                    {
+                        for(n=0;n<4;n++)
+                        {
+                            matriz[m][n]=m;
+                        }
+                    }
+                    break;
+				case 2:
+                    for(m=0;m<4;m++)
+                    {
+                        for(n=0;n<4;n++)
+                        {
+                            cout<<matriz[m][n]<<" ";
+                        }cout<<endl;
+                    }
+				    break;
+
+                default:
+				margen();
+				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, o 2"<<endl;
+			    }
 			case 6:
 
 				break;
