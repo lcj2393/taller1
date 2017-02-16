@@ -37,6 +37,7 @@ int main()
 int dato;
 int v,s,l,m,n,c;
 int imp,par,sp,fac;
+int v1[5];
 
 
 	do
@@ -57,7 +58,7 @@ int imp,par,sp,fac;
 		{	case 0:
 				dato=0;
 			break;
-			case 1:
+			case 1://OK
 			    int d1;
                 system("cls");margen();
                 gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
@@ -156,9 +157,18 @@ int imp,par,sp,fac;
                         gotoxy(10,4);cout<<"Digite numero de la cadena: ";gotoxy(38,4);cin>>n;
                         gotoxy(10,6);cout<<s<<endl;gotoxy(10,7);cout<<m<<endl;
                         for(v=0;v<(n-2);v++)
-                        {
-                            c=s+m;gotoxy(10,l);cout<<c<<endl;s=m; m=c;l++;
-                        }
+                        {  c=s+m;gotoxy(10,l);cout<<c<<endl;s=m; m=c;l++;   }
+                    break;
+                 case 5:
+                        l=5;
+                        system("cls");margen();gotoxy(10,3);cout<<"Ingrese los 5 valores."<<endl;
+                        for(v=0;v<5;v++)
+                        {   gotoxy(10,l);cout<<"Valor "<<v+1<<": ";cin>>v1[v];cout;l++;   }
+
+                        gotoxy(10,12);cout<<"Los valores ingresados fueron: "<<endl;
+                        l=13;
+                        for(v=0;v<5;v++)
+                        {   gotoxy(10,l);cout<<"Valor "<<v+1<<"= "<<v1[v]<<endl;l++;    }
                     break;
                 default:
 				margen();
