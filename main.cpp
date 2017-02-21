@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <math.h>
+#include <time.h>
 #define iz_de 23
 #define sup 80
 #define inf 79
@@ -274,9 +275,10 @@ int matriz[4][4];
                     gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
                     gotoxy(30,3);cout<<"MENU SWITCH"<<endl;
                     gotoxy(25,6);cout<<"Elija una opcion:"<<endl;
-                    gotoxy(10,8);cout<<"1. Llenar Matri Automaticamente."<<endl;
-                    gotoxy(10,9);cout<<"2. Mostrar Matriz generada."<<endl;
-                    gotoxy(10,10);cout<<"0. atras."<<endl;gotoxy(43,6);cin>>d4;
+                    gotoxy(10,8);cout<<"1. Consultar mes del Sistema."<<endl;
+                    gotoxy(10,9);cout<<"2. Convertir Vocales a ASCCI."<<endl;
+                    gotoxy(10,10);cout<<"3. Convertir numeros del 1 al 9 a ASCCI."<<endl;
+                    gotoxy(10,11);cout<<"0. atras."<<endl;gotoxy(43,6);cin>>d4;
                     system("cls");
 
 			    switch (d4)
