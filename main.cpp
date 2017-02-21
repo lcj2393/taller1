@@ -290,7 +290,7 @@ int matriz[4][4];
                 case 1:
 
                     break;
-                case 2:
+                case 2://OK
                     system("cls");margen();gotoxy(10,3);cout<<"Digite la Vocal a convertir: "<<endl;gotoxy(40,3);cin>>vocal;
                     switch(vocal)
                     {
@@ -314,7 +314,7 @@ int matriz[4][4];
                         break;
                         }getch();
                         break;
-                case 3:
+                case 3://OK
                     int d4_1;
                     system("cls");margen();gotoxy(10,3);cout<<"Digite la Numero a convertir: "<<endl;gotoxy(40,3);cin>>d4_1;
                     switch(d4_1)
@@ -357,7 +357,7 @@ int matriz[4][4];
 				margen();gotoxy(5,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2 o 3"<<endl;
 			    }}while(d4!=0);
 			    break;
-			case 5://MENU PARA PROCESOS DE MATRICES
+			case 5://MENU PARA PROCESOS DE MATRICES(TERMINADO)
                     int d5;
                     system("cls");margen();
                     gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
@@ -370,7 +370,7 @@ int matriz[4][4];
 
 			    switch (d5)
 			    {
-                case 1:
+                case 1://OK
                     system("cls");margen();gotoxy(10,3);cout<<"Digite los valores para la Matriz."<<endl;
                     l=5;c=10;
                     for(m=0;m<4;m++)
@@ -384,7 +384,7 @@ int matriz[4][4];
                         {   cout<<matriz[m][n]<<" ";   }cout<<endl;
                     }
                     break;
-				case 2:
+				case 2://OK
 				    cout<<"La matriz generada automaticamente es: "<<endl;
                     for(m=0;m<4;m++)
                     {   for(n=0;n<4;n++)
@@ -399,10 +399,32 @@ int matriz[4][4];
 			    break;
 			case 6://MENU CON PROCESO STRUC
 
+			    struct semestre
+                {   float n1[3],n2[3],n3[3];
+                    char nombre[3][30];
+                };
+                semestre estudiante;
+                int nfinal[3];
+
+                    for(m=0;m<5;m++)
+                    {
+                        system("cls");margen();gotoxy(24,3);gotoxy(28,3);cout<<"NOTAS ESTUDIANTES COTECNOVA"<<endl<<endl;
+                        gotoxy(10,8);cout<<"Digite Nombre del Estudiante: ";gotoxy(44,8);cin.getline(estudiante.nombre[m],30);cout<<endl;
+
+                        system("cls");margen();gotoxy(29,3);cout<<"NOTAS ESTUDIANTES COTECNOVA"<<endl<<endl;
+                        gotoxy(25,6);cout<<"Estudiante "<<estudiante.nombre[m]<<endl;
+                        gotoxy(25,8);cout<<"Digite Notas"<<endl;
+                        gotoxy(25,10);cout<<"Nota 1: ";gotoxy(33,10);cin>>estudiante.n1[m];cout<<endl;
+                        gotoxy(25,11);cout<<"Nota 2: ";gotoxy(33,11);cin>>estudiante.n2[m];cout<<endl;
+                        gotoxy(25,12);cout<<"Nota 3: ";gotoxy(33,12);cin>>estudiante.n3[m];cout<<endl;
+                        nfinal[m]=((estudiante.n1[m]*35)/100)+((estudiante.n2[m]*35)/100)+((estudiante.n3[m]*30)/100);
+                        system("cls");
+                    }
+
 				break;
 			default:
 				margen();
-				gotoxy(25,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3, 4, 5 o 6"<<endl;
+				gotoxy(5,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3, 4, 5 o 6"<<endl;
 			break;
 		}
 		if(dato!=0)
