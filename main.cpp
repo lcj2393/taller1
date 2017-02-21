@@ -398,15 +398,16 @@ int matriz[4][4];
 			    }
 			    break;
 			case 6://MENU CON PROCESO STRUC
-
-			    struct semestre
+                /*l=1;
+                do{
+                c=(l+1)-1;
+                struct semestre
                 {   float n1[3],n2[3],n3[3];
-                    char nombre[3][30];
+                    char nombre[l][30];
                 };
                 semestre estudiante;
                 int nfinal[3];
-
-                    for(m=0;m<5;m++)
+                    for(m=c;m<l;m++)
                     {
                         system("cls");margen();gotoxy(24,3);gotoxy(28,3);cout<<"NOTAS ESTUDIANTES COTECNOVA"<<endl<<endl;
                         gotoxy(10,8);cout<<"Digite Nombre del Estudiante: ";gotoxy(44,8);cin.getline(estudiante.nombre[m],30);cout<<endl;
@@ -418,17 +419,29 @@ int matriz[4][4];
                         gotoxy(25,11);cout<<"Nota 2: ";gotoxy(33,11);cin>>estudiante.n2[m];cout<<endl;
                         gotoxy(25,12);cout<<"Nota 3: ";gotoxy(33,12);cin>>estudiante.n3[m];cout<<endl;
                         nfinal[m]=((estudiante.n1[m]*35)/100)+((estudiante.n2[m]*35)/100)+((estudiante.n3[m]*30)/100);
-                        system("cls");
-                    }
 
+                        system("cls");margen();gotoxy(10,3);cout<<"Continuar digitando <1-SI> o <0-NO>: ";gotoxy(48,3);cin>>s;
+                        if(s==1){l++;}
+                    }
+                }while(s!=0);
+
+                    system("cls");margen();gotoxy(31,3);cout<<"RESULTADO DE NOTAS"<<endl<<endl;
+                    for(int m=0;m<l;m++)
+					{
+						cout<<"Estudiante: "<<estudiante.nombre[m]<<endl;
+						cout<<"Nota 1:"<<estudiante.n1[m]<<endl;
+						cout<<"Nota 2:"<<estudiante.n2[m]<<endl;
+						cout<<"Nota 3:"<<estudiante.n3[m]<<endl;
+						cout<<"NOTA FINAL: "<<nfinal[m]<<endl;
 				break;
 			default:
 				margen();
 				gotoxy(5,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3, 4, 5 o 6"<<endl;
 			break;
-		}
+		}*/
 		if(dato!=0)
 		{getch();}
+		}
 	}while(dato>0);
 	system("pause");
 	return 0;
