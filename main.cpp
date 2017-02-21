@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <stdio.h>
 #include <windows.h>
+#include <math.h>
 #define iz_de 23
 #define sup 80
 #define inf 79
@@ -41,8 +42,8 @@ int v1[5];
 float dec[4];
 int matriz[4][4];
 
-
-	do
+//MENU PRINCIPAL
+	do//CICLO REPETIR PARA RETORNAR SIEMPRE AL MENU PRINCIPAL
 	{	system("cls");margen();
 		gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
         gotoxy(30,3);cout<<"MENU PRINCIPAL"<<endl;
@@ -60,8 +61,9 @@ int matriz[4][4];
 		{	case 0:
 				dato=0;
 			break;
-			case 1://OK
+			case 1://MENU PARA CICLOS WHILE (TERMINADO)
 			    int d1;
+			    do{
                 system("cls");margen();
                 gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
                 gotoxy(28,3);cout<<"MENU CICLO WHILE"<<endl;
@@ -75,20 +77,23 @@ int matriz[4][4];
 
 			    switch (d1)
 			    {
-                case 1:
+                case 0:
+                        d1=0;
+                    break;
+                case 1://OK
                         m=5;
                         system("cls");margen();gotoxy(10,3);cout<<"Los numeros del 1 al 10 son: "<<endl;
                         v=0;
                         while (v<10)
                         {   v++;gotoxy(10,m);cout<<v<<" ";m++;   }
                     break;
-                case 2:
+                case 2://OK
                         v=0,s=0;
                         while ( v < 100)
                         {   v++;s=s+v;  }
                         system("cls");margen();gotoxy(25,10);cout<<"La suma es " <<s<<".";
                     break;
-                case 3:
+                case 3://OK
                         par=1,sp=0;
                         while(par<50)
                         {   if(par%2==0)
@@ -97,7 +102,7 @@ int matriz[4][4];
                         }
                         system("cls");margen();gotoxy(25,10);cout<<"La Suma de los Pares es "<<sp<<".";
                     break;
-                case 4:
+                case 4://OK
                         imp=1,sp=0;
                         while(imp<50)
                         {   if(imp%2==0){}
@@ -108,13 +113,14 @@ int matriz[4][4];
                     break;
                 default:
 				margen();
-				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3 o 4"<<endl;
+				gotoxy(5,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3 o 4"<<endl;
 			break;
-			    }
+			    }}while(d1!=0);
+			break;
 
-			break;
-			case 2:
+			case 2://MENU PARA CICLOS FOR (TERMINADO)
 			    int d2;
+			    do{
                 system("cls");margen();
                 gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
                 gotoxy(30,3);cout<<"MENU CICLO FOR"<<endl;
@@ -130,13 +136,16 @@ int matriz[4][4];
 
 			    switch (d2)
 			    {
-                case 1:
+                case 0:
+                    d2=0;
+                    break;
+                case 1://OK
                     m=10,n=5;
                     system("cls");margen();gotoxy(10,3);cout<<"Los numeros del 1 al 100 son: "<<endl;
                     for (v=0;v<100;v++)
                     {   gotoxy(m,n);cout<<v+1<<" ";if((v==30) or (v==60) or (v==90)){ n++;}else{m=m+2;} }
                     break;
-                case 2:
+                case 2://OK
                         system("cls");margen();gotoxy(10,4);cout<<"Digite un numero para generar tabla de multiplicar del 1 a 20."<<endl;
                         gotoxy(10,5);cout<<"Numero: "<<endl;gotoxy(18,5);cin>>n;
 
@@ -148,7 +157,7 @@ int matriz[4][4];
                             gotoxy(10,s);cout<<n<<"x"<<v+1<<"= "<<m;s++;
                         }
                     break;
-                case 3:
+                case 3://OK
                         system("cls");margen();gotoxy(10,4);cout<<"Digite un numero para calcular su factorial."<<endl;
                         gotoxy(10,5);cout<<"Numero: "<<endl;gotoxy(18,5);cin>>n;
                         fac=1;
@@ -157,7 +166,7 @@ int matriz[4][4];
                         gotoxy(10,7);cout << "El factorial de "<<n<<" es: " <<fac<<"."<<endl;
 
                     break;
-                case 4:
+                case 4://OK
                         s=1,m=1,c=0,l=8;
                         system("cls");margen();gotoxy(10,2);cout<<"Calculo de Serie Fibonacci"<<endl;
                         gotoxy(10,4);cout<<"Digite numero de la cadena: ";gotoxy(38,4);cin>>n;
@@ -165,7 +174,7 @@ int matriz[4][4];
                         for(v=0;v<(n-2);v++)
                         {  c=s+m;gotoxy(10,l);cout<<c<<endl;s=m; m=c;l++;   }
                     break;
-                 case 5:
+                 case 5://OK
                         l=5;
                         system("cls");margen();gotoxy(10,3);cout<<"Ingrese los 5 valores."<<endl;
                         for(v=0;v<5;v++)
@@ -178,11 +187,12 @@ int matriz[4][4];
                     break;
                 default:
 				margen();
-				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3, 4 o 5"<<endl;
-			    }
+				gotoxy(5,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2, 3, 4 o 5"<<endl;
+			    }}while(d2!=0);
 				break;
 			case 3:
-                    int d3;
+                    int d3;//MENU PARA PROCESOS ARRAY(TERMINADO)
+                    do{
                     system("cls");margen();
                     gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
                     gotoxy(33,3);cout<<"MENU ARRAY"<<endl;
@@ -195,79 +205,129 @@ int matriz[4][4];
 
 			    switch (d3)
 			    {
-                case 1:
-                    l=5;
-                    system("cls");margen();gotoxy(10,3);cout<<"Ingrese los 4 valores Decimales."<<endl;
-                    for(v=0;v<4;v++)
-                    {   gotoxy(10,l);cout<<"Valor "<<v+1<<": ";cin>>dec[v];cout;l++;   }
-
-                    gotoxy(10,12);cout<<"Los valores Decimales ingresados fueron: "<<endl;
-                    l=13;
-                    for(v=0;v<4;v++)
-                    {   gotoxy(10,l);cout<<"Valor "<<v+1<<"= "<<dec[v]<<endl;l++;    }
+                case 0:
+                        d3=0;
                     break;
-				/*case 2:
-				    int n1,n2;
-				    m=0;
-				    n=1;
+                case 1://OK
                     l=5;
-                    system("cls");margen();gotoxy(10,2);cout<<"Ingrese los 2 valores para generar los Array."<<endl;
-                    gotoxy(10,4);cout<<"Valores para Array 1: ";cin>>n1;
-                    gotoxy(10,5);cout<<"Valores para Array 2: ";cin>>n2;
-                    for(v=0;v<n1;v++)
-                    {   gotoxy(10,l);cout<<"Valor "<<v+1<<": ";cin>>dec[v];cout;l++;   }
-
-                    gotoxy(10,12);cout<<"Los valores Decimales ingresados fueron: "<<endl;
-                    l=13;
+                    system("cls");margen();
+                    dec[0]=32.583;
+                    dec[1]=11.239;
+                    dec[2]=45.781;
+                    dec[3]=22.237;
+                    gotoxy(10,3);cout<<"Los valores Decimales almacenados son: "<<endl;
                     for(v=0;v<4;v++)
-                    {   gotoxy(10,l);cout<<"Valor "<<v+1<<"= "<<dec[v]<<endl;l++;    }
+                    {   gotoxy(10,l);cout<<v+1<<"). "<<dec[v]<<endl;l++;   }
+                    break;
+                case 2://OK
+				    int ancho,largo;
+                    system("cls");margen();gotoxy(10,3);cout<<"Digite el tamaño para la Matriz."<<endl;
+                    gotoxy(10,5);cout<<"Ancho: ";cin>>ancho;cout<<endl;
+                    gotoxy(10,6);cout<<"Largo: ";cin>>largo;cout<<endl;
+                    s=1;
+                    for(m=0;m<ancho;m++)
+                    {   for(n=0;n<largo;n++)
+                        {   matriz[m][n]=s;   }s=0;
+                    }
+                    l=10;
+                    c=10;
+                    gotoxy(10,8);cout<<"La matriz Generada es: "<<endl;
 
-                    break;*/
+                    for(m=0;m<ancho;m++)
+                    {   for(n=0;n<largo;n++)
+                        {   gotoxy(c,l);cout<<matriz[m][n]<<" ";l++;   }cout<<endl;c=c+2;l=10;
+                    }
+                    break;
+                case 3://OK
+                   system("cls");margen();gotoxy(10,3);cout<<"Digite los valores para la Matriz."<<endl;
+                   l=5;
+                    for(m=0;m<4;m++)
+                    {   for(n=0;n<4;n++)
+                        {   gotoxy(10,l);cout<<"Pocision ("<<m<<"."<<n<<"): "; cin>>matriz[m][n];l++;   }
+                    }
+                    for(m=0;m<4;m++)
+                    {   for(n=0;n<4;n++)
+                        {   if(m==1){ s=matriz[m][n];matriz[m][n]=pow(s,2);}else
+                            { if(m==2){ s=matriz[m][n];matriz[m][n]=pow(s,3);}else
+                                { if(m==3){ s=matriz[m][n];matriz[m][n]=pow(s,4);}
+
+                    }}}}
+                    l=11;c=10;
+                    system("cls");cout<<"La matriz ingresada es: "<<endl;
+
+                    for(m=0;m<4;m++)
+                    {   for(n=0;n<4;n++)
+                        {   cout<<matriz[m][n]<<" ";l=l+4;   }cout<<endl;
+                    }
+
+                    break;
 
                 default:
 				margen();
 				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2 o 3"<<endl;
-			    }
-			case 4:
+			    }}while(d3!=0);
+			case 4://MENU PARA PROCESOS CON SWITCH
 
-				break;
-			case 5:
+                    int d4;
+                    do{
+                    system("cls");margen();
+                    gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
+                    gotoxy(30,3);cout<<"MENU SWITCH"<<endl;
+                    gotoxy(25,6);cout<<"Elija una opcion:"<<endl;
+                    gotoxy(10,8);cout<<"1. Llenar Matri Automaticamente."<<endl;
+                    gotoxy(10,9);cout<<"2. Mostrar Matriz generada."<<endl;
+                    gotoxy(10,10);cout<<"0. atras."<<endl;gotoxy(43,6);cin>>d4;
+                    system("cls");
+
+			    switch (d4)
+			    {
+                case 1:
+
+                    break;
+                default:
+				margen();
+				gotoxy(5,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2 o 3"<<endl;
+			    }}while(d4!=0);
+			case 5://MENU PARA PROCESOS DE MATRICES
                     int d5;
                     system("cls");margen();
                     gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
                     gotoxy(30,3);cout<<"MENU MATRICES"<<endl;
                     gotoxy(25,6);cout<<"Elija una opcion:"<<endl;
-                    gotoxy(10,8);cout<<"1. Llenar Matri Automaticamente."<<endl;
-                    gotoxy(10,9);cout<<"2. Mostrar Matriz generada."<<endl;
+                    gotoxy(10,8);cout<<"1. Rellenar Matriz Manualmente"<<endl;
+                    gotoxy(10,9);cout<<"2. Llenar Matriz Automaticamente.."<<endl;
                     gotoxy(10,10);cout<<"0. atras."<<endl;gotoxy(43,6);cin>>d5;
                     system("cls");
 
 			    switch (d5)
 			    {
                 case 1:
+                    system("cls");margen();gotoxy(10,3);cout<<"Digite los valores para la Matriz."<<endl;
+                    l=5;c=10;
                     for(m=0;m<4;m++)
-                    {
-                        for(n=0;n<4;n++)
-                        {
-                            matriz[m][n]=m;
-                        }
+                    {   for(n=0;n<4;n++)
+                        {   gotoxy(c,l);cout<<"Pocision ("<<m<<"."<<n<<"): "; cin>>matriz[m][n];l++;   }
+                    }
+
+                    system("cls");cout<<"La matriz ingresada es: "<<endl;
+                    for(m=0;m<4;m++)
+                    {   for(n=0;n<4;n++)
+                        {   cout<<matriz[m][n]<<" ";   }cout<<endl;
                     }
                     break;
 				case 2:
+				    cout<<"La matriz generada automaticamente es: "<<endl;
                     for(m=0;m<4;m++)
-                    {
-                        for(n=0;n<4;n++)
-                        {
-                            cout<<matriz[m][n]<<" ";
-                        }cout<<endl;
+                    {   for(n=0;n<4;n++)
+                        { cout<<matriz[m][n]<<" <+> ";}
+                        cout<<endl;
                     }
 				    break;
-
                 default:
 				margen();
 				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, o 2"<<endl;
 			    }
-			case 6:
+			case 6://MENU CON PROCESO STRUC
 
 				break;
 			default:
