@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <windows.h>
 #include <math.h>
-#include <time.h>
+#include <ctime>
 #define iz_de 23
 #define sup 80
 #define inf 79
@@ -42,6 +42,9 @@ int imp,par,sp,fac;
 int v1[5];
 float dec[4];
 int matriz[4][4];
+//CAPTURADOR DE LA FECHA DEL SISTEMA
+time_t now=time(0);
+tm *ltm=localtime(&now);
 
 //MENU PRINCIPAL
 	do//CICLO REPETIR PARA RETORNAR SIEMPRE AL MENU PRINCIPAL
@@ -267,7 +270,7 @@ int matriz[4][4];
 				margen();
 				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2 o 3"<<endl;
 			    }}while(d3!=0);
-			case 4://MENU PARA PROCESOS CON SWITCH
+			case 4://MENU PARA PROCESOS CON SWITCH(TERMINADO)
 
                     int d4;
                     char vocal;
@@ -287,7 +290,49 @@ int matriz[4][4];
                 case 0:
                         d4=0;
                     break;
-                case 1:
+                case 1://OK
+                    system("cls");margen();gotoxy(10,3);cout<<"El mes del Sistema es: "<<endl;
+                    int mes;
+                    mes= 1 + ltm->tm_mon;//Asignacion del mes del sistema a variable entera
+                    switch(mes)
+                    {
+                    case 1:
+                        gotoxy(10,5);cout<<"Enero"<<endl;
+                        break;
+                    case 2:
+                        gotoxy(10,5);cout<<"Febrero"<<endl;
+                        break;
+                    case 3:
+                        gotoxy(10,5);cout<<"Marzo"<<endl;
+                        break;
+                    case 4:
+                        gotoxy(10,5);cout<<"Abril"<<endl;
+                        break;
+                    case 5:
+                        gotoxy(10,5);cout<<"Mayo"<<endl;
+                        break;
+                    case 6:
+                        gotoxy(10,5);cout<<"Junio"<<endl;
+                        break;
+                    case 7:
+                        gotoxy(10,5);cout<<"Julio"<<endl;
+                        break;
+                    case 8:
+                        gotoxy(10,5);cout<<"Agosto"<<endl;
+                        break;
+                    case 9:
+                        gotoxy(10,5);cout<<"Septiembre"<<endl;
+                        break;
+                    case 10:
+                        gotoxy(10,5);cout<<"Octubre"<<endl;
+                        break;
+                    case 11:
+                        gotoxy(10,5);cout<<"Noviembre"<<endl;
+                        break;
+                    case 12:
+                        gotoxy(10,5);cout<<"Diciembre"<<endl;
+                        break;
+                    }getch();
 
                     break;
                 case 2://OK
