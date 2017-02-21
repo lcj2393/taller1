@@ -270,6 +270,7 @@ int matriz[4][4];
 			case 4://MENU PARA PROCESOS CON SWITCH
 
                     int d4;
+                    char vocal;
                     do{
                     system("cls");margen();
                     gotoxy(28,2);cout<<"MENU TALLER 1 ED2"<<endl;
@@ -283,13 +284,79 @@ int matriz[4][4];
 
 			    switch (d4)
 			    {
+                case 0:
+                        d4=0;
+                    break;
                 case 1:
 
                     break;
+                case 2:
+                    system("cls");margen();gotoxy(10,3);cout<<"Digite la Vocal a convertir: "<<endl;gotoxy(40,3);cin>>vocal;
+                    switch(vocal)
+                    {
+                    case 'a':
+                        {   gotoxy(10,5);cout<<"ASCII: 97";   }
+                        break;
+                    case 'e':
+                        {   gotoxy(10,5);cout<<"ASCII: 101";   }
+                        break;
+                    case 'i':
+                        {   gotoxy(10,5);cout<<"ASCII: 105";   }
+                        break;
+                    case '0':
+                        {   gotoxy(10,5);cout<<"ASCII: 111";   }
+                        break;
+                    case 'u':
+                        {   gotoxy(10,5);cout<<"ASCII: 117";   }
+                        break;
+                    default:
+                        {  margen();gotoxy(5,7);cout<<"El valor ingresado no es valido. "<<endl;  }
+                        break;
+                        }getch();
+                        break;
+                case 3:
+                    int d4_1;
+                    system("cls");margen();gotoxy(10,3);cout<<"Digite la Numero a convertir: "<<endl;gotoxy(40,3);cin>>d4_1;
+                    switch(d4_1)
+                    {
+                    case 0:
+                        {    gotoxy(10,5);cout<<"SACII: 48";    }
+                        break;
+                    case 1:
+                        {    gotoxy(10,5);cout<<"SACII: 49";    }
+                        break;
+                    case 2:
+                        {    gotoxy(10,5);cout<<"SACII: 50";    }
+                        break;
+                    case 3:
+                        {    gotoxy(10,5);cout<<"SACII: 51";    }
+                        break;
+                    case 4:
+                        {    gotoxy(10,5);cout<<"SACII: 52";    }
+                        break;
+                    case 5:
+                        {    gotoxy(10,5);cout<<"SACII: 53";    }
+                        break;
+                    case 6:
+                        {    gotoxy(10,5);cout<<"SACII: 54";    }
+                        break;
+                    case 7:
+                        {    gotoxy(10,5);cout<<"SACII: 55";    }
+                        break;
+                    case 8:
+                        {    gotoxy(10,5);cout<<"SACII: 56";    }
+                        break;
+                    case 9:
+                        {    gotoxy(10,5);cout<<"SACII: 57";    }
+                    break;
+                         default:
+                        margen();gotoxy(5,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2 o 3"<<endl;
+                    }getch();
+                    break;
                 default:
-				margen();
-				gotoxy(5,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2 o 3"<<endl;
+				margen();gotoxy(5,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, 2 o 3"<<endl;
 			    }}while(d4!=0);
+			    break;
 			case 5://MENU PARA PROCESOS DE MATRICES
                     int d5;
                     system("cls");margen();
@@ -329,6 +396,7 @@ int matriz[4][4];
 				margen();
 				gotoxy(10,7);cout<<"El valor ingresado no es valido. Debe ser 0, 1, o 2"<<endl;
 			    }
+			    break;
 			case 6://MENU CON PROCESO STRUC
 
 				break;
